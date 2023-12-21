@@ -54,7 +54,17 @@ const register = async (req, res) => {
   }
 };
 
+const verify = async (req, res) => {
+  try {
+    const user = req.user;
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ error: "Server Error" });
+  }
+};
+
 module.exports = {
   login,
   register,
+  verify,
 };

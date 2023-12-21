@@ -30,7 +30,7 @@ const getAllSurveys = async (req, res) => {
 // Other CRUD operations (update, delete) can be added similarly
 const getSurveyWithQuestions = async (req, res) => {
   try {
-    const surveyId = req.params.surveyId; // Assuming survey ID is provided in the request parameters
+    const { surveyId } = req.body;
 
     const survey = await Survey.findById(surveyId).populate("questions");
 

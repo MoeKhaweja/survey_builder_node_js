@@ -8,7 +8,7 @@ const submitAnswer = async (req, res) => {
       user: userId,
       survey: surveyId,
       question: questionId,
-      answer,
+      answer: answer,
     });
 
     res.status(201).json({ answer: newAnswer });
